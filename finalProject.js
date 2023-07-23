@@ -65,7 +65,7 @@ function getDiscount(taxBoolean, guests) {
 
 }
 
-
+// call function getDiscount();
 getDiscount(true, 2);
 getDiscount(false, 10);
 getDiscount();
