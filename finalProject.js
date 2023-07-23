@@ -19,11 +19,10 @@ const dishData = [
 ]
 const tax = 1.20;
 
-//function getPrices();
+// Implement getPrices()
 function getPrices(taxBoolean) {
 
-  for (i = 0; i < dishData.length; i++){
-    // console.log(dishData[i]);
+  for (var i = 0; i < dishData.length; i++){
     
     var finalPrice;
 
@@ -36,18 +35,18 @@ function getPrices(taxBoolean) {
       return;
     }
 
-    console.log("Dish: " + dishData[i].name + " Price(incl.tax): $" + finalPrice);
+    console.log(`Dish: ${dishData[i].name} Price: $${finalPrice}`);
 
   }
 
 }
 
-//function getDiscount();
+// Implement getDiscount()
 function getDiscount(taxBoolean, guests) {
 
   getPrices(taxBoolean);
 
-  if (typeof (guests) == 'number' && (guests > 0 && guests < 30)) {
+  if (typeof (guests) == 'number' && guests > 0 && guests < 30) {
     var discount = 0;
 
     if (guests < 5) {
@@ -56,7 +55,7 @@ function getDiscount(taxBoolean, guests) {
       discount = 10;
     }
     
-    console.log('Discount is : $' + discount);
+    console.log('Discount is: $' + discount);
 
   } else {
     console.log('The second argument must be a number between 0 and 30');
@@ -65,50 +64,12 @@ function getDiscount(taxBoolean, guests) {
 
 }
 
-// call function getDiscount();
+// Call getDiscount()
 getDiscount(true, 2);
 getDiscount(false, 10);
-getDiscount();
-getDiscount('Sokouern', 50);
 
 
 
 
 
 
-
-
-
-
-// function getPrices(taxBoolean) {
-//   let results = [];
-//   for (const product of dishData) {
-//     let finalPrice;
-//     if (taxBoolean) {
-//       finalPrice = product.price * tax;
-//     } else {
-//       finalPrice = product.price;
-//     }
-//     results.push(`Dish: ${product.name} Price: $${finalPrice}`);
-//   }
-//   return results.join(' ');
-// }
-
-// function getDiscount(taxBoolean, guests) {
-//   let result = getPrices(taxBoolean);
-//   if (typeof guests === 'number' && (guests > 0 && guests < 30)) {
-//     let discount = 0;
-//     if (guests < 5) {
-//       discount = 5;
-//     } else if (guests >= 5) {
-//       discount = 10
-//     }
-//     return result + ' Discount is: $' + discount;
-//   } else; {
-//     return result + ' The second argument must be a number between 0 and 30';
-//   }
-// }
-
-
-// getDiscount(true, 2);
-// getDiscount(false, 10);
